@@ -32,9 +32,10 @@ def main():
     while not game.is_over():
         print_board(game.board)
         if game.next_player == gotypes.Player.white:
-            human_move = input('-- ')
-            point = point_from_coords(human_move.strip())
-            move = goboard.Move.play(point)
+            # human_move = input('-- ')
+            # point = point_from_coords(human_move.strip())
+            move = bot.select_move(game)
+            # move = goboard.Move.play(point)
         else:
             move = bot.select_move(game)
         print_move(game.next_player, move)
