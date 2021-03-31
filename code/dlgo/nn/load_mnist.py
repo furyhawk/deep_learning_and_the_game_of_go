@@ -24,7 +24,7 @@ def shape_data(data):
 
 def load_data():
     with gzip.open('mnist.pkl.gz', 'rb') as f:
-        train_data, validation_data, test_data = pickle.load(f)  # <4>
+        train_data, validation_data, test_data = pickle.load(f, encoding="latin1")  # <4>
 
     return shape_data(train_data), shape_data(test_data)  # <5>
 
